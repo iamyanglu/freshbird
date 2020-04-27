@@ -21,12 +21,37 @@ export function putArt(obj) {
         method:'post',
 
         headers:{
-            'Content-type':'application/x-www-form-urlencoded'
+            'Content-type':'application/json'
         },
         data:obj
     })
+}
 
+export function getart(Apage){
+    let request = axios.create({
+        baseURL:'http://127.0.0.1:2000',
+        timeout:5000,
 
+    })
+    return request({
+            url:'/getart',
+       params:{
+            page:Apage
+       }
 
+    })
+}
+export function getartByid(id){
+
+    let request = axios.create({
+        baseURL:'http://127.0.0.1:2000',
+        timeout:5000,
+    })
+    return request({
+        url:'/qid',
+        params:{
+            id:id
+        }
+    })
 
 }

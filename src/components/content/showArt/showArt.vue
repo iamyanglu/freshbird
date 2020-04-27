@@ -1,17 +1,26 @@
 <template>
     <div class="artItemF">
-         <art-item/>
-        <art-item/>
+<art-item v-for="(item,key) in list" :item="item" :key="item._id"></art-item>
+
+
     </div>
 </template>
 
 <script>
     import artItem from  '@/components/conmon/art/artItem'
+
     export default {
         name: "showArt",
+        props:['list'],
         components:{
             artItem
-        }
+        },
+
+        methods:{
+
+        },
+
+
     }
 </script>
 

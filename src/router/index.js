@@ -2,6 +2,7 @@ import  Vue from 'vue'
 import Router from  'vue-router'
 const index =()=> import('@/views/index/index')
 const part =()=> import('@/views/publishArt/pArt')
+const detail =()=> import('@/views/detail/detail')
 Vue.use(Router)
 const routes=[
     {
@@ -15,6 +16,10 @@ const routes=[
     {
         path:'/admin',
         component:part
+    },
+    {
+        path:'/detail/:id',
+        component:detail
     }
 ]
 const router = new Router({

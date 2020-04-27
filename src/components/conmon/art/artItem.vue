@@ -2,17 +2,17 @@
     <div class="art_item">
         <div class="head_img">
 
-            <img src="../../../assets/img/test.jpg" />
+            <img :src="item.head_img" />
             <div class="extend_info">
-                <div class="icon"><img src="../../../assets/img/eye.png" height="20px" width="20px"/>   50</div>
-                <div class="icon"><img src="../../../assets/img/good .png" height="20px" width="20px"/>   60</div>
+                <div class="icon"><img src="../../../assets/img/eye.png" height="20px" width="20px"/> {{item.fabulous}}</div>
+                <div class="icon"><img src="../../../assets/img/good .png" height="20px" width="20px"/> {{item.inspect}}</div>
             </div>
         </div>
         <div class="art_main">
 
-            <div class="art_tit">{{tit}}</div>
-            <div class="art_content">{{content}}</div>
-            <div class="date">2017-5-13</div>
+            <div class="art_tit" @click="todetail">{{item.tit}}</div>
+            <div class="art_content">{{item.content}}</div>
+            <div class="date">{{artdate}}</div>
         </div>
 
 
@@ -25,13 +25,27 @@
 <script>
     export default {
         name: "artItem",
+        props:['item'],
+        computed:{
+            artdate()
+            {
+               const Y =  new Date(this.item.date).getFullYear()
+                console.log(Y);
+                const M =  new Date(this.item.date).getMonth() + 1
+                const D=  new Date(this.item.date).getDay()+1
+                return Y+'-'+M+'-'+D
+            }
+        },
         data(){
             return{
-                tit:"WEB的一生之敌",
-                content:"前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...前言: 发现vue模板代码写多了, 自己的原生JS手写能力下降了不少, 闲来无事, 自己做一个简单的图片放大查看封装<!DOCT...",
-                date:"2018-7-15",
-                img_url:''
+
             }
+        },
+        methods:{
+            todetail(){
+                this.$router.push('/detail/'+this.item._id)
+            }
+
         }
     }
 </script>
@@ -48,7 +62,9 @@
 }
 .head_img{
     position: relative;
-    width: 10%;
+    width: 100px;
+    height: 100px;
+
     border-radius: 50%;
     align-self: center;
     display: inline-block;
@@ -56,10 +72,12 @@
 .head_img img{
     border: medium double black;
        width:100%;
+    height: 100%;
         border-radius: 50%;
     }
     .art_main{
         padding-left: 20px;
+        display: flex;
 
         display: inline-block;
         width: 90%;
@@ -68,7 +86,10 @@
 
     }
 .art_main .art_tit{
-    font-size: 25px;
+    display: flex;
+    flex-shrink: 3;
+
+    font-size: 20px;
     width: 100%;
     font-weight: bold;
     font-family: "微软雅黑 Light";
@@ -120,5 +141,12 @@
     width: 20%;
     height: auto;
 
+}
+.art_tit{
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.art_tit:hover{
+    color: red;
 }
     </style>
