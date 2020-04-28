@@ -55,3 +55,31 @@ export function getartByid(id){
     })
 
 }
+export function addSuport(id){
+
+    let request = axios.create({
+        baseURL:'http://49.235.121.158:2000',
+        timeout:5000,
+    })
+    return request({
+        url:'/addPrase',
+        params:{
+            id:id
+        }
+
+    })
+}
+export function addViews(id){
+
+    let request = axios.create({
+        baseURL:'http://49.235.121.158:2000',
+        timeout:5000,
+    })
+    return request({
+        url:'/addViews',
+        params:{
+            id:id
+        }
+
+    })
+}
