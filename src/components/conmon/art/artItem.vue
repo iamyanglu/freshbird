@@ -10,9 +10,9 @@
         </div>
         <div class="art_main">
 
-            <div class="art_tit" @click="todetail">{{item.tit}}</div>
+            <div class="font-line">  <div class="art_tit" @click="todetail"><h1>{{item.tit}}</h1></div>  <div class="date">{{artdate}}</div></div>
             <div class="art_content">{{item.content}}</div>
-            <div class="date">{{artdate}}</div>
+
         </div>
 
 
@@ -53,11 +53,11 @@
 <style scoped>
 .art_item{
     display: flex;
-
     width: 70%;
     height: 200px;
     position: relative;
     margin-bottom: 20px;
+
 
 }
 .head_img{
@@ -65,46 +65,50 @@
     width: 100px;
     height: 100px;
 
-    border-radius: 50%;
-    align-self: center;
-    display: inline-block;
+
 }
 .head_img img{
     border: medium double black;
-       width:100%;
-    height: 100%;
+     width:100%;
+     height: 100%;
         border-radius: 50%;
     }
     .art_main{
         padding-left: 20px;
         display: flex;
-
-        display: inline-block;
+        flex-direction: column;
         width: 90%;
         height: 200px;
         overflow: hidden;
 
     }
-.art_main .art_tit{
-    display: flex;
-    flex-shrink: 3;
+    .art_main .font-line{
+       height: 30%;
+        display: flex;
 
-    font-size: 20px;
-    width: 100%;
+        align-items: center;
+
+    }
+.art_main .art_tit{
+
+    font-size: 30px;
+
     font-weight: bold;
-    font-family: "微软雅黑 Light";
-    height: 100px;
-    line-height: 100px;
+
+
+
   
 }
     div.date{
-        line-height: 30px;
-        width: 50px;
-        height: 30px;
-        position: absolute;
-        top:10px;
-        right: 0;
-        background-color: white;
+
+
+        font-weight: 100;
+        width: 100px;
+
+        margin-left: auto;
+
+
+
     }
     .art_content{
         width: 100%;
@@ -113,18 +117,13 @@
         overflow: hidden;
         background-color: #fff;
     }
-    div.line{
-        width: 10%;
-     margin: 0 auto;
 
-    }
     .extend_info{
         border-top: 1px solid black;
-
-        width: 100%;
+        width: 90%;
         top:50%;
         opacity: 0;
-        margin-top:-50px;
+        margin-top:-30px;
 
         height: 100px;
 
@@ -132,14 +131,14 @@
         transition: all 1s;
     }
 .extend_info:hover{
-    opacity: 1;
+    opacity: 0.8;
     transform: translateX(-100%);
 }
 .extend_info .icon img{
     padding-right: 10px;
     border: none;
     width: 20%;
-    height: auto;
+
 
 }
 .art_tit{

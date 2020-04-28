@@ -23,7 +23,7 @@
                 let form = new FormData();
                 form.append('image',$file);
                 putimage({
-                    url:'http://127.0.0.1:2000/image',
+                    url:'http://49.235.121.158:2000/image',
                     method:'post',
                     data:form,
                     headers:{ 'Content-Type': 'multipart/form-data' }
@@ -53,7 +53,7 @@
                 let form = new FormData();
                 form.append('image',$file);
                putimage({
-                    url:'http://127.0.0.1:2000/image',
+                    url:'http://49.235.121.158:2000/image',
                     method:'post',
                     data:form,
                     headers:{ 'Content-Type': 'multipart/form-data' }
