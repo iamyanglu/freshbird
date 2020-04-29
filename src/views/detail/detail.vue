@@ -25,6 +25,7 @@
         name: "detail",
         data(){
             return{
+                id:"",
                 art:"",
                 isClick:true
             }
@@ -32,13 +33,14 @@
         methods:{
             addfalous(){
                 this.isClick=!this.isClick
-                addViews(id)
+                addViews(this.id)
 
             }
 
         },
         created(){
             let id = this.$route.params.id;
+            this.id = id
             getartByid(id).then(res=>{
                 this.art = res.data[0].content
 

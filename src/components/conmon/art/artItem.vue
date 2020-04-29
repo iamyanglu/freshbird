@@ -32,7 +32,7 @@
                const Y =  new Date(this.item.date).getFullYear()
                 console.log(Y);
                 const M =  new Date(this.item.date).getMonth() + 1
-                const D=  new Date(this.item.date).getDay()+1
+                const D=  new Date(this.item.date).getDate()
                 return Y+'-'+M+'-'+D
             }
         },
