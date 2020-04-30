@@ -11,7 +11,7 @@
         <div class="art_main">
 
             <div class="font-line">  <div class="art_tit" @click="todetail"><h1>{{item.tit}}</h1></div>  <div class="date">{{artdate}}</div></div>
-            <div class="art_content">{{item.content}}</div>
+            <div class="art_content">{{item.content | filterContent}}</div>
 
         </div>
 
@@ -26,6 +26,14 @@
     export default {
         name: "artItem",
         props:['item'],
+        filters:{
+            filterContent(txt){
+                txt = txt.replace(/#/g," " )
+                txt = txt.replace(/~/g," ")
+                return txt
+            }
+
+        },
         computed:{
             artdate()
             {
