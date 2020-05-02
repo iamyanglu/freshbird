@@ -36,15 +36,14 @@
         computed:{
             skill(){
                 let str1 = this.skilllist
-                let r = str1.match(/@.*?-/ig)
+                let r = str1.match(/[a-z]+-?\d?/ig)
 
                 for (let index =0;index<r.length;index++)
                 {
                     str1 =str1.replace(r[index],'<a style="color: red">'+r[index]+ '</a>')
                 }
 
-                str1 = str1.replace(/@/ig,'')
-                str1 = str1.replace(/-/ig,'')
+
                 return str1
             }
         },
@@ -54,8 +53,8 @@
                 stu:"学历 : 大学本科在读",
 
                 email:"邮箱地址:499339182@qq.com",
-                skilllist:'技术栈 ：@html-,@css-,@js-  使用 vue-cli进行@vue-前端开发.掌握 @vuex- ，@vueRouter-，@promise-，@axios-，掌握基本es6语法和简单高阶函数，' +
-                    'webpack基本打包知识,使用node中express进行简单api编写，掌握@node-操作@mongodb-基本知识.'
+                skilllist:'技术栈 ：html,css,js 使用 vue-cli进行vue前端开发.掌握 vuex ，vueRouter，promise，axios，掌握基本es6语法和简单高阶函数，' +
+                    'webpack基本打包知识,使用node中express进行简单api编写，掌握node操作mongodb基本知识.'
             }
         }
     }

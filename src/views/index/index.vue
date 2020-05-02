@@ -1,6 +1,6 @@
 <template>
     <div>
-        <load-ing  v-if="isLoad"></load-ing>
+<load-ing v-if="isLoad"></load-ing>
         <indexhead/>
         <motto/>
         <show-art :list="list.artlist" />
@@ -42,15 +42,6 @@
                         this.list.artlist.push(...res.data)
                         this.isLoad=false
                     },1000)
-
-
-
-
-
-
-
-
-
 
                 })
 
