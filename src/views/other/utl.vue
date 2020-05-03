@@ -1,12 +1,16 @@
 <template>
     <div>
-        工具集
+    <Map/>
     </div>
 </template>
 
 <script>
+    import Map from "@/components/conmon/map/lbsmap"
     export default {
-        name: "utl"
+        name: "utl",
+        components:{
+            Map
+        }
     }
 </script>
 
