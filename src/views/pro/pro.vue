@@ -1,13 +1,16 @@
 <template>
     <div>
-    这里时 个人主页
-    $END$
+     <bord/>
     </div>
 </template>
 
 <script>
+    import bord from  '@/components/conmon/message/messagebord'
     export default {
-        name: "pro"
+        name: "pro",
+        components:{
+            bord
+        }
     }
 </script>
 

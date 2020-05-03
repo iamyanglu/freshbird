@@ -1,5 +1,5 @@
 <template>
-    <div class="getMore">
+    <div class="getMore" v-if="totalNum > artNum">
         <a class="button" @click="btnClick">加载更多</a>
     </div>
 </template>
@@ -7,10 +7,14 @@
 <script>
     export default {
         name: "sButton",
+        props:['artNum','totalNum'],
         methods:{
             btnClick(){
                this.$emit('getmoreart')
             }
+        },
+        created() {
+            console.log(this.totalNum,this.artNum);
         }
     }
 </script>

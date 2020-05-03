@@ -4,7 +4,9 @@
         <indexhead/>
         <motto/>
         <show-art :list="list.artlist" />
-        <my-button @getmoreart="getArt"></my-button>
+
+        <my-button   v-if='isButton' @getmoreart="getArt"  :totalNum="totalart" :artNum="nowartNum"></my-button>
+
     </div>
     
 </template>
@@ -14,7 +16,7 @@
     import indexhead from '@/components/conmon/indexhead/myhead'
     import motto from '@/components/content/motto/motto'
     import showArt from '@/components/content/showArt/showArt'
-    import {getart} from "../../network/admin";
+    import {getart,total} from "../../network/admin";
     import myButton from '@/components/conmon/sButton/sButton'
     import loadIng from  '@/views/loading/loading'
 
@@ -30,7 +32,14 @@
         data(){
             return{
                 list:{page:0,artlist:[]},
-                isLoad:true
+                isLoad:true,
+                totalart:0,
+                isButton:false
+            }
+        },
+        computed:{
+            nowartNum(){
+                return this.list.artlist.length
             }
         },
         methods:{
@@ -41,9 +50,19 @@
                         this.list.page++
                         this.list.artlist.push(...res.data)
                         this.isLoad=false
+                        this.isButton=true
                     },1000)
-
+                    this.gettotal()
                 })
+
+            },
+            gettotal(){
+                total().then(re=>{
+
+                    this.totalart = parseInt(re.data)
+                })
+
+
 
             }
 

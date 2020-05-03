@@ -68,7 +68,7 @@ export function addSuport(id){
         }
 
     })
-}
+}  //添加点赞
 export function addViews(id){
 
     let request = axios.create({
@@ -80,6 +80,18 @@ export function addViews(id){
         params:{
             id:id
         }
+
+    })
+} //添加观看
+//查询文章总数
+export function total(id){
+
+    let request = axios.create({
+        baseURL:'http://49.235.121.158:2000',
+        timeout:5000,
+    })
+    return request({
+        url:'/total',
 
     })
 }
