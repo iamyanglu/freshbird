@@ -12,6 +12,7 @@
 
             <div class="font-line">  <div class="art_tit" @click="todetail"><h1>{{item.tit}}</h1></div>  <div class="date">{{artdate}}</div></div>
             <div class="art_content">{{item.content | filterContent}}</div>
+            <div class="label_bot"><slot></slot></div>
 
         </div>
 
@@ -64,6 +65,7 @@
     width: 70%;
     height: 200px;
     position: relative;
+
     margin-bottom: 20px;
 
 
@@ -156,4 +158,9 @@
 .art_tit:hover{
     color: red;
 }
+    .label_bot{
+        width: 100%;
+        height: 50px;
+
+    }
     </style>

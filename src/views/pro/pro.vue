@@ -24,16 +24,16 @@
                             },
                             tooltip: {},
                             legend: {
-                                data:['销量','产量']
+
                             },
-                            xAxis: {
-                                data: ["3-24","3-25","3-26","3-27"]
-                            },
+                            xAxis: {},
                             yAxis: {},
                             series: [{
-                                name: '销量',
                                 type: 'pie',
-                                data: [5, 20, 36, 10, 10, 10]
+                                radius:100,
+                                data: [{name:'访问人数',value:'50'},
+                                    {name:'点赞人数',value:'40'},
+                                    {name:'白嫖人数',value:'80'},]
                             }]
                         };
                      echar.setOption(option)

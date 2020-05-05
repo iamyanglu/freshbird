@@ -1,6 +1,13 @@
 <template>
     <div class="artItemF">
-<art-item v-for="(item,key) in list" :item="item" :key="item._id"></art-item>
+<art-item v-for="(item,key) in list" :item="item" :key="item._id">
+
+    <label-item v-for="re in item.label" :txt="re"></label-item>
+
+
+
+
+</art-item>
 
 
     </div>
@@ -8,12 +15,14 @@
 
 <script>
     import artItem from  '@/components/conmon/art/artItem'
+    import labelItem from  '@/components/conmon/labelF/mylabel'
 
     export default {
         name: "showArt",
         props:['list'],
         components:{
-            artItem
+            artItem,
+            labelItem
         },
 
         methods:{

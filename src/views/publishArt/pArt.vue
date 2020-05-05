@@ -1,6 +1,7 @@
 <template>
     <div class="part">
         <div class="art_tit"><input v-model="tit" placeholder="文章标题">
+            <input v-model="label" placeholder="标签请用-隔开">
         </div>
         <mavon-editor ref=md @imgAdd="$imgAdd"  v-model="handbook"/>
         <form  enctype="multipart/form-data"  method ='post'  action="http://127.0.0.1:200/image">
@@ -31,7 +32,7 @@
                     let art = {}
                     art.tit = this.tit
                     art.content = this.handbook
-
+                    art.label = this.label.split('-')
                     art.head_img = res.data
                     console.log(art);
                     putArt(art).then(res=>{
@@ -72,6 +73,7 @@
             return {
               handbook:'',
                 tit:'',
+                label:""
             }
         }
     }
