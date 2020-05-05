@@ -17,19 +17,18 @@
 <style scoped>
 .loading{
     z-index: 999;
-    position: absolute;
+    position: fixed;
+    top: 0;
     width: 100%;
     height: 100%;
-    top: 0;
-    bottom: 0;
     background-color: #ffffff;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
     .loadAnimation{
         width: 80px;
         height: 80px;
-        margin: 0 auto;
         background-color:lightseagreen;
         animation: loading 2s infinite;
 

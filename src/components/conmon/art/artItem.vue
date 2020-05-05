@@ -15,10 +15,7 @@
             <div class="label_bot"><slot></slot></div>
 
         </div>
-
-
         </div>
-
 
 
 </template>
@@ -39,7 +36,7 @@
             artdate()
             {
                const Y =  new Date(this.item.date).getFullYear()
-                console.log(Y);
+               
                 const M =  new Date(this.item.date).getMonth() + 1
                 const D=  new Date(this.item.date).getDate()
                 return Y+'-'+M+'-'+D
@@ -65,8 +62,8 @@
     width: 70%;
     height: 200px;
     position: relative;
-
     margin-bottom: 20px;
+
 
 
 }
@@ -110,15 +107,9 @@
   
 }
     div.date{
-
-
         font-weight: 100;
         width: 100px;
-
         margin-left: auto;
-
-
-
     }
     .art_content{
         width: 100%;
@@ -163,4 +154,5 @@
         height: 50px;
 
     }
+
     </style>

@@ -1,20 +1,34 @@
 <template>
   <div id="app">
-    <nav-bar/>
+    <load-ing v-if="isLoad"/>
 
-    <router-view></router-view>
+    <nav-bar > </nav-bar>
 
+    <router-view @loaded="isLoad=false"></router-view>
 
   </div>
 </template>
 
 <script>
   import navBar from '@/components/content/navbar/navbaruse'
+  import loadIng from '@/views/loading/loading'
 
 export default {
   name: 'App',
   components:{
     navBar,
+    loadIng,
+  },
+  data(){
+    return {
+      isLoad:true
+    }
+  },
+  methods:{
+    changeLoad(){
+      this.isLoad=false
+      console.log(this.isLoad);
+    }
   }
 
 }

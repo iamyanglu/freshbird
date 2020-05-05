@@ -1,6 +1,6 @@
 <template>
     <div>
-<load-ing v-if="isLoad"></load-ing>
+
         <indexhead/>
         <motto/>
         <show-art :list="list.artlist" />
@@ -18,7 +18,7 @@
     import showArt from '@/components/content/showArt/showArt'
     import {getart,total} from "../../network/admin";
     import myButton from '@/components/conmon/sButton/sButton'
-    import loadIng from  '@/views/loading/loading'
+
 
     export default {
         name: "index",
@@ -27,7 +27,7 @@
             motto,
             showArt,
             myButton,
-            loadIng
+
         },
         data(){
             return{
@@ -49,7 +49,9 @@
                     window.setTimeout(()=>{
                         this.list.page++
                         this.list.artlist.push(...res.data)
-                        this.isLoad=false
+
+                        this.$emit('loaded')
+
                         this.isButton=true
                     },1000)
                     this.gettotal()

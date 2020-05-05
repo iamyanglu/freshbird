@@ -7,9 +7,7 @@
 <script>
     export default {
         name: "label",
-        props:['txt'],created() {
-            console.log(this.txt);
-        }
+        props:['txt']
     }
 </script>
 
