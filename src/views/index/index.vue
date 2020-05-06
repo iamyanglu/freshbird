@@ -20,8 +20,6 @@
     import showArt from '@/components/content/showArt/showArt'
     import {getart,total} from "../../network/admin";
     import myButton from '@/components/conmon/sButton/sButton'
-
-
     export default {
         name: "index",
         components:{
@@ -45,40 +43,31 @@
             }
         },
         methods:{
-            getArt(){
+
+            getArt(){ // 拿到6篇文章
                 getart(this.list.page).then(res=>{
 
-                    window.setTimeout(()=>{
-                        this.list.page++
-                        this.list.artlist.push(...res.data)
-
-                        this.$emit('loaded')
-
-                        this.isButton=true
-                    },1000)
+                        //当请求到相同数据
+                    this.list.page+=1;
+                    this.list.artlist.push(...res.data)
+                    this.$emit('loaded')
+                    this.isButton=true
                     this.gettotal()
                 })
 
             },
+            //拿到文章总数做 按钮显示判断
             gettotal(){
                 total().then(re=>{
-
                     this.totalart = parseInt(re.data)
                 })
-
-
-
             }
 
         },
         created() {
             this.getArt()
-
-
         },
-        updated() {
-            console.log(this.list.artlist);
-        }
+
     }
 </script>
 

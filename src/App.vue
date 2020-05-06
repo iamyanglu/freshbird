@@ -1,18 +1,13 @@
 <template>
   <div id="app">
 
-
-
       <load-ing v-if="isLoad" > </load-ing>
-
-
-
-
-
     <nav-bar > </nav-bar>
-<keep-alive>
+
     <router-view @loaded="changeLoad"></router-view>
-</keep-alive>
+
+
+
   </div>
 </template>
 
