@@ -1,8 +1,10 @@
 <template>
     <div>
         <div id="myEch">
-
-
+            <div id="experence">
+                <div class="pro_tit"></div>
+                <div class="pro_content"></div>
+            </div>
         </div>
     </div>
 </template>

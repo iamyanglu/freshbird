@@ -1,5 +1,5 @@
 <template>
-    <div class="myhead">
+    <div class="myHead">
         <div class="pro"><img src="../../../assets/img/pro.jpg" /></div>
         <div class="out_info">
             <div class="infoBox">
@@ -47,23 +47,35 @@
                 return str1
             }
         },
+        methods:{
+          initHead(){
+              document.querySelector('.myHead').style.height=document.documentElement.clientHeight + 'px'
+              console.log(document.documentElement.clientHeight);
+
+          }
+        },
         data(){
             return{
-                name:"姓名 : freshBird",
-                stu:"学历 : 大学本科在读",
-
+                name:"Yanglu`s 博客",
+                stu:"发表文章",
                 email:"邮箱地址:499339182@qq.com",
                 skilllist:'技术栈 ：html,css,js 使用 vue-cli进行vue前端开发.掌握 vuex ，vueRouter，promise，axios，掌握基本es6语法和简单高阶函数，' +
                     'webpack基本打包知识,使用node中express进行简单api编写，掌握node操作mongodb基本知识.'
             }
+        },
+        created() {
+
+        },
+        mounted() {
+            this.initHead()
         }
     }
 </script>
 
 <style scoped>
-.myhead{
+.myHead{
     width: 100%;
-    height: 400px;
+    height: 700px;
     background-color: #eeeeee;
     display: flex;
     flex-wrap: wrap;
@@ -80,7 +92,7 @@
 }
 
     .pro img{
-
+        margin-top: 50px;
         border-radius: 50%;
         width: 65px;
         height: 65px;

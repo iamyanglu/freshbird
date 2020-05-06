@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
     import navBarF from '@/components/conmon/navbar/navbarF'
     import navBarC from '@/components/conmon/navbar/navbarC'
     export default {
