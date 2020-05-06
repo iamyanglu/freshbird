@@ -1,6 +1,5 @@
 <template>
-    <div class="loading"
-    >
+    <div class="loading" >
 
         <div class="loadAnimation"> </div>
     </div>
@@ -9,7 +8,13 @@
 <script>
     export default {
         name: "loading",
-        props:{
+
+        created(){
+            console.log('呗创建了');
+        },
+
+        destroyed() {
+            console.log('我被摧毁了');
         }
     }
 </script>

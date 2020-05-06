@@ -36,7 +36,7 @@
             artdate()
             {
                const Y =  new Date(this.item.date).getFullYear()
-               
+
                 const M =  new Date(this.item.date).getMonth() + 1
                 const D=  new Date(this.item.date).getDate()
                 return Y+'-'+M+'-'+D
@@ -64,10 +64,11 @@
     position: relative;
     margin-bottom: 20px;
 
-
+    position: relative;
 
 }
 .head_img{
+    z-index: 10;
     position: relative;
     width: 100px;
     height: 100px;
@@ -75,6 +76,8 @@
 
 }
 .head_img img{
+    position: relative;
+
     border: medium double black;
      width:100%;
      height: 100%;
@@ -120,6 +123,7 @@
     }
 
     .extend_info{
+        background-color: lightpink;
         border-top: 1px solid black;
         width: 90%;
         top:50%;
@@ -128,7 +132,7 @@
 
         height: 100px;
 
-        position: absolute;
+
         transition: all 1s;
     }
 .extend_info:hover{

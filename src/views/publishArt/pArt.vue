@@ -8,12 +8,11 @@
             <input type="file" name="file" id="file">
         </form>
         <input type="button" value="提交" class="putart" @click="put">
-
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
+
     import {putimage,putArt} from "../../network/admin";
 
     export default {
@@ -75,6 +74,8 @@
                 tit:'',
                 label:""
             }
+        },created() {
+
         }
     }
 </script>

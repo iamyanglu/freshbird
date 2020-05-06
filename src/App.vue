@@ -1,10 +1,16 @@
 <template>
   <div id="app">
-    <load-ing v-if="isLoad"/>
+
+
+      <load-ing v-if="isLoad" > </load-ing>
+
+
+
+
 
     <nav-bar > </nav-bar>
 
-    <router-view @loaded="isLoad=false"></router-view>
+    <router-view @loaded="changeLoad"></router-view>
 
   </div>
 </template>
@@ -12,13 +18,16 @@
 <script>
   import navBar from '@/components/content/navbar/navbaruse'
   import loadIng from '@/views/loading/loading'
-
 export default {
   name: 'App',
   components:{
     navBar,
     loadIng,
   },
+    computed:{
+
+
+    },
   data(){
     return {
       isLoad:true
@@ -27,8 +36,11 @@ export default {
   methods:{
     changeLoad(){
       this.isLoad=false
-      console.log(this.isLoad);
+
     }
+  },
+  updated() {
+    console.log(this.isLoad);
   }
 
 }

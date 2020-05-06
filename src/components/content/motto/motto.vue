@@ -1,15 +1,28 @@
 <template>
     <div class="motto_mid">
 
-        <div class="main_motto">
+        <div class="main_motto" @click="isShow=!isShow">
             剑气纵横三万里，一剑光寒十九州
         </div>
+        <transition>
+
+            <div class="extend_motto" v-show="isShow">
+                <p>这世界本来就没有什么问题</p>
+            </div>
+        </transition>
+
     </div>
 </template>
 
 <script>
     export default {
-        name: "motto"
+        name: "motto",
+        data(){
+            return {
+                isShow:false
+            }
+        },
+
     }
 </script>
 
@@ -17,8 +30,9 @@
 .motto_mid{
     margin: 20px;
     width: 100%;
-    height: 100px;
+    height: 130px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
     .main_motto{
@@ -27,7 +41,12 @@
         background-color: #eeeeee;
         text-align: center;
         line-height: 70px;
-        color: white;
+        color: lightsalmon;
+    }
+    .extend_motto{
+        width: 80%;
+        height: 60px;
+        background-color: lightseagreen;
     }
 
 </style>
