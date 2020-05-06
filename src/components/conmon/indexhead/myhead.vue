@@ -94,8 +94,8 @@
     .pro img{
         margin-top: 50px;
         border-radius: 50%;
-        width: 65px;
-        height: 65px;
+        width: 80px;
+        height: 80px;
 
     }
     .out_info{
@@ -109,8 +109,8 @@
     }
 .infoBox div{
 
-    height: 19px;
-    line-height: 19px;
+    height: 25px;
+    line-height: 25px;
     padding-left: 5px;
     border-left: 1px solid black;
 }
