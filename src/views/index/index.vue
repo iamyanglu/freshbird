@@ -3,7 +3,9 @@
 
         <indexhead/>
         <motto/>
+
         <show-art :list="list.artlist" />
+
 
         <my-button   v-if='isButton' @getmoreart="getArt"  :totalNum="totalart" :artNum="nowartNum"></my-button>
 
@@ -72,6 +74,10 @@
         created() {
             this.getArt()
 
+
+        },
+        updated() {
+            console.log(this.list.artlist);
         }
     }
 </script>

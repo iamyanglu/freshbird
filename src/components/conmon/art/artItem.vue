@@ -123,16 +123,13 @@
     }
 
     .extend_info{
-        background-color: lightpink;
         border-top: 1px solid black;
         width: 90%;
         top:50%;
         opacity: 0;
         margin-top:-30px;
-
+        position: absolute;
         height: 100px;
-
-
         transition: all 1s;
     }
 .extend_info:hover{

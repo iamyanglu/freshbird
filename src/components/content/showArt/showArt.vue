@@ -1,13 +1,19 @@
 <template>
     <div class="artItemF">
-<art-item v-for="(item,key) in list" :item="item" :key="item._id">
-
-    <label-item v-for="re in item.label" :txt="re"></label-item>
 
 
+            <art-item v-for="(item,key) in list" :item="item" :key="item._id">
+                <label-item v-for="re in item.label" :txt="re"></label-item>
+            </art-item>
 
 
-</art-item>
+
+
+
+
+
+
+
 
 
     </div>
@@ -28,8 +34,12 @@
         methods:{
 
         },
-
-
+        created() {
+            console.log("creatred");
+        },
+        destroyed() {
+            console.log('destroyed');
+        }
     }
 </script>
 
