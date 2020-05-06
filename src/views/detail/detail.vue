@@ -39,6 +39,7 @@
 
         },
         created(){
+            this.$emit('loaded')
             let id = this.$route.params.id;
             this.id = id
             getartByid(id).then(res=>{

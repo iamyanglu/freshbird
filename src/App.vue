@@ -16,6 +16,11 @@
   import loadIng from '@/views/loading/loading'
 export default {
   name: 'App',
+    watch:{
+      $route(to,from){
+          this.$router.push(to.path)
+      }
+    },
   components:{
     navBar,
     loadIng,
@@ -33,10 +38,11 @@ export default {
     changeLoad(){
       this.isLoad=false
 
-    }
+    },
+
   },
-  updated() {
-    console.log(this.isLoad);
+  created() {
+
   }
 
 }

@@ -38,8 +38,11 @@
         methods:{
 
 
-                    }
+                    },
+        created() {
+            this.$emit('loaded')
         }
+    }
 </script>
 
 <style scoped>

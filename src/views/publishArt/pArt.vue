@@ -75,7 +75,7 @@
                 label:""
             }
         },created() {
-
+            this.$emit('loaded')
         }
     }
 </script>
