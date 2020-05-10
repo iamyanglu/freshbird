@@ -63,15 +63,17 @@
     height: 200px;
     position: relative;
     margin-bottom: 20px;
-
     position: relative;
 
 }
 .head_img{
+    transform: translateY(30%);
     z-index: 10;
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    max-width: 100px;
+    max-height: 100px;
+    height: 10vw;
 
 
 }
@@ -101,7 +103,7 @@
     }
 .art_main .art_tit{
 
-    font-size: 30px;
+
 
     font-weight: bold;
 
@@ -144,6 +146,7 @@
 
 }
 .art_tit{
+    width: 80%;
     cursor: pointer;
     transition: all 0.5s;
 }
@@ -152,6 +155,7 @@
 }
     .label_bot{
         width: 100%;
+        display: flex;
         height: 50px;
 
     }
